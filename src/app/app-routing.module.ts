@@ -14,7 +14,7 @@ import { LoginComponent } from './login/login.component';
 
 const routes: Routes = [
   {path: "voyages", component : voyagesComponent},
-  {path: "add-produit", component : AddVoyageComponent},
+  {path: "add-voyages", component : AddVoyageComponent},
   {path: "updatevoyage/:id", component: UpdateVoyageComponent},
   {path: "rechercheParCategorie", component : RechercheParCategorieComponent},
   {path: "rechercheParNom", component : RechercheParNomComponent},

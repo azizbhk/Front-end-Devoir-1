@@ -1,17 +1,13 @@
-<form>
-    <div [hidden]="ajout" >
-        <label>ID Catégorie</label>
-        <!-- <input type="text" [(ngModel)]="categorie.idCat" name="idCategorie" class="form-control w-25"> -->
+<form (ngSubmit)="saveCategorie()">
+    <div [hidden]="ajout">
+      <label>ID Ligue</label>
+      <input type="text" [(ngModel)]="categorie.idCat" name="idLigue" class="form-control w-25" readonly>
     </div>
     <div>
-        <label>Nom Catégorie</label>
-        <!-- <input type="text" [(ngModel)]="categorie.nomCat" name="nomCategorie" class="form-control" placeholder="Entrez un nom de catégorie..."> -->
+      <label>Nom Ligue</label>
+      <input type="text" [(ngModel)]="categorie.nomCat" name="nomLigue" class="form-control" placeholder="Entrez un nom de catégorie..." required>
     </div>
-    
     <div class="mt-2">
-        <button type="submit" [disabled]="!categorie.nomCat" class="btn btn-success"
-            (click)="saveCategorie()" >{{ajout ? 'Ajouter' : 'Modifier'}}
-        </button>
+      <button type="submit" class="btn btn-success">{{ ajout ? 'Ajouter' : 'Modifier' }}</button>
     </div>
-</form>
-
+  </form>

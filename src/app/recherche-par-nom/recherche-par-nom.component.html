@@ -1,7 +1,7 @@
 <div class="container">
     <form class="form-inline"> <div class="form-group mx-sm-3 mb-2 mt-2 "> 
         <label>Nom voyage en tapant</label> 
-        <!-- <input #nom [(ngModel)]="searchTerm" name="searchTerm" class="form-control" > -->
+         <input #nom [(ngModel)]="searchTerm" name="searchTerm" class="form-control" > 
      </div>
      </form>
     <div class="card shadow mb-4">
@@ -12,7 +12,7 @@
     <td>{{voyage.idvoyage}}</td>
     <td>{{voyage.nomvoyage}}</td>
     <td>{{voyage.prixvoyage}}</td>
-    <!-- <td>{{voyage.dateCreation | date:'dd/MM/yyyy'}}</td> -->
+ <td>{{voyage.dateCreation | date:'dd/MM/yyyy'}}</td> 
     <td>{{voyage.categorie.nomCat}}</td>
    
     </tr>

@@ -27,7 +27,7 @@ export class UpdateCategorieComponent implements OnInit {
   }
 
   saveCategorie(){
-    this.categorieUpdated.emit(this.categorie);
+    this.categorieUpdated.emit({...this.categorie});
   }
 
 

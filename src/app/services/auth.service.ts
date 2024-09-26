@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { User } from '../model/user.model';
+//import { HttpClient } from '@angular/common/http';
+//import { JwtHelperService } from '@auth0/angular-jwt';
 
 
 @Injectable({
@@ -10,7 +12,7 @@ export class AuthService {
 
   
   users: User[] = [{"username":"admin","password":"123","roles":['ADMIN']},
-                   {"username":"aziz","password":"123","roles":['USER']} ];
+                   {"username":"souleimen","password":"123","roles":['USER']} ];
 
 public loggedUser!:string;
 public isloggedIn: Boolean = false;

@@ -16,10 +16,20 @@ export class RechercheParCategorieComponent implements OnInit {
   constructor(private voyageService: voyageService) {}
 
   ngOnInit(): void {
-    this.voyageService.listeCategories().subscribe(cats => {
-      this.categories = cats._embedded.categories;
-      console.log(cats);
-    });
+    this.voyageService.listeCategories().subscribe(
+      (cats) => {
+        // Directly assign the cats if it's an array
+        if (Array.isArray(cats)) {
+          this.categories = cats; // Assign the array directly
+        } else {
+          console.error('Unexpected response format:', cats);
+        }
+      },
+      (error) => {
+        console.error('Error fetching categories:', error);
+      }
+    );
+  
   }
 
   onChange() {

@@ -2,6 +2,7 @@
 	import { Component, OnInit } from '@angular/core';
 	import { voyage } from '../model/voyage.model';
 	import { voyageService } from '../services/voyage.service';
+import { AuthService } from '../services/auth.service';
 	
 
 	@Component({
@@ -14,7 +15,7 @@
 	    voyages! : voyage[]; //un tableau de voyages
 voyage: any;
 
-	  constructor(private voyageService: voyageService) {
+	  constructor(private voyageService: voyageService,public authService: AuthService) {
 	   //this.voyages=[];
 	     }
 

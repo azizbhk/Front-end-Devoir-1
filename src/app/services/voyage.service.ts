@@ -14,17 +14,15 @@ const httpOptions = {
 })
 export class voyageService {
 
-  apiURL: string = 'http://localhost:8088/voyages/api';  // Updated to match Spring Boot controller
-  apiURLCat: string = 'http://localhost:8088/voyages/api/cat';  // Category endpoint
+  apiURL: string = 'http://localhost:8090/voyages/api';  // Updated to match Spring Boot controller
+  apiURLCat: string = 'http://localhost:8090/voyages/api/cat';  // Category endpoint
 
   voyages: voyage[] = [];  // Array of voyages
 
   constructor(private http: HttpClient) {
     // Initialize with some example data (can be removed later)
     this.voyages = [
-      { idvoyage: 1, nomvoyage: "PC Asus", prixvoyage: 3000.60, dateCreation: new Date("01/14/2011"), categorie: { idCat: 1, nomCat: "PC" } },
-      { idvoyage: 2, nomvoyage: "Imprimante Epson", prixvoyage: 450, dateCreation: new Date("12/17/2010"), categorie: { idCat: 2, nomCat: "Imprimante" } },
-      { idvoyage: 3, nomvoyage: "Tablette Samsung", prixvoyage: 900.123, dateCreation: new Date("02/20/2020"), categorie: { idCat: 1, nomCat: "PC" } }
+     
     ];
   }
 
@@ -35,7 +33,7 @@ export class voyageService {
 
   // Add a new voyage
   ajoutervoyage(voyage: voyage): Observable<voyage> {
-    return this.http.post<voyage>(this.apiURL, voyage, httpOptions);
+    return this.http.post<voyage>(`${this.apiURL}`, voyage, httpOptions);
   }
 
   // Delete a voyage by ID
@@ -59,7 +57,8 @@ export class voyageService {
 
   // Update an existing voyage
   updatevoyage(voyage: voyage): Observable<voyage> {
-    return this.http.put<voyage>(this.apiURL, voyage, httpOptions);
+    return this.http.put<voyage>(`${this.apiURL}`, voyage);
+
   }
 
   // Get list of categories

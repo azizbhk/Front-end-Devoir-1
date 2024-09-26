@@ -6,7 +6,7 @@
                     <tr>
                         <th>Liste de voyages</th>
                     </tr>
-                    <tr> <th>Id</th><th>Nom</th> <th>Prix</th>  <th>Date Création</th> </tr>
+                    <tr> <th>Id</th><th>Nom</th> <th>Prix</th>  <th>Date Création</th> <th>category</th></tr>
                 </thead>
                 <tbody *ngFor="let voyage of voyages">
                     <tr>
@@ -17,7 +17,8 @@
                         <td>{{voyage.categorie.nomCat}}</td> 
                  
                         <td><a class="btn btn-danger" (click)="supprimervoyage(voyage)">Supprimer</a></td>
-                       
+                        <td><a *ngIf="authService.isAdmin()" class="btn btn-success" [routerLink]="['/updatevoyage',voyage.idvoyage]">Modifier</a></td>
+
                     </tr>
                 </tbody>
             </table>
